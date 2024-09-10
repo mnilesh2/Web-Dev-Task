@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+
+    <!--jQuery library-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+    <!--Latest compiled and minified JavaScript-->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/style.css">
+    <title>Navbar in Bootstrap</title>
+    <script>
+        // Custom Carousel Functionality
+        document.addEventListener('DOMContentLoaded', function () {
+            const carousel = document.querySelector('#carouselExample');
+            const carouselInner = carousel.querySelector('.carousel-inner');
+            const carouselItems = carousel.querySelectorAll('.carousel-item');
+            const prevButton = carousel.querySelector('.carousel-control-prev');
+            const nextButton = carousel.querySelector('.carousel-control-next');
+            let currentIndex = 0;
+            const totalSlides = carouselItems.length;
+
+            function updateCarousel() {
+                const offset = -currentIndex * 100; // Calculate the offset for the transform
+                carouselInner.style.transform = `translateX(${offset}%)`;
+            }
+
+            // Move to the next slide
+            function moveNext() {
+                currentIndex = (currentIndex + 1) % totalSlides; // Loop back to the start
+                updateCarousel();
+            }
+
+            // Move to the previous slide
+            function movePrev() {
+                currentIndex = (currentIndex - 1 + totalSlides) % totalSlides; // Loop to the end
+                updateCarousel();
+            }
+
+            // Event listeners for controls
+            nextButton.addEventListener('click', moveNext);
+            prevButton.addEventListener('click', movePrev);
+
+            // Optional: Auto-slide feature
+            setInterval(moveNext, 3000); // Change slides every 3 seconds
+        });
+    </script>
+
+
+
+</head>
+
+<body>
+    <nav class="navbar navbar-dark navbar-fixed-top" style="background-color:#2874f0;">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand" href="#">iPhone Store</a>
+            </div>
+
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <form class="navbar-form navbar-left">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search">
+                    </div>
+                    <button type="submit" class="btn btn-default"><span
+                            class="glyphicon glyphicon-search"></span></button>
+                </form>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href=""><span class="glyphicon glyphicon-shopping-cart"></span> Cart<span
+                                class="badge"></span></a></li>
+                    <li><a href=""><span class="glyphicon glyphicon-cog"></span> Settings</a></li>
+                    <li><a href=""><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    <section>
+        <div class="container-fluid">
+            <div class="row">
+                <!-- Product picture -->
+                <div class="col-sm-5 sticky-sidebar">
+                    <div class="thumbnail" style="margin-top: 50px;">
+
+                        <section id="photo-gallery">
+                            <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+                                <div class="carousel-inner">
+                                    <div class="carousel-item active">
+                                        <img src="/img1.png" class="d-block w-100" alt="iPhone 16">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="/img2.png" class="d-block w-100" alt="iPhone 16">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="/img3.png" class="d-block w-100" alt="iPhone 16">
+                                    </div>
+                                </div>
+                                <a class="carousel-control-prev" href="#carouselExample" role="button" data-bs-slide="prev">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden"></span>
+                                </a>
+                                <a class="carousel-control-next" href="#carouselExample" role="button" data-bs-slide="next">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden"></span>
+                                </a>
+                            </div>
+                        </section>
+                        
+
+
+                        <div class="caption">
+                            <div class="row buttons">
+                                <button class="btn btn-lg col-sm-4 col-sm-offset-2"
+                                    style="background-color:#ff9f00; color:#fff;">
+                                    <span class="glyphicon glyphicon-shopping-cart"></span>&nbsp;ADD TO CART
+                                </button>
+
+                                <button class="btn btn-lg col-sm-4 col-sm-offset-1"
+                                    style="background-color:#fb641b; color:#fff;">
+                                    <i class="fa fa-bolt"></i> BUY NOW
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Description -->
+                <!-- Product Description -->
+                <div class="col-sm-7 desc" style="margin-top: 50px;">
+                
+                    <div style="height: 100px;">
+                        <h2 style="text-align: center;font-weight: bold;">Apple iPhone 16 (Silver 128GB)</h2>
+                
+                        <div class="row">
+                            <div class="col-sm-2" style="padding: 0; width: auto; margin-right: 10px;">
+                                <span class="label label-success">4.8 <span class="glyphicon glyphicon-star"></span></span>
+                            </div>
+                
+                            <div class="col-sm-5" style="padding: 0;">
+                                <strong>3,124 Ratings & Reviews</strong>
+                            </div>
+                        </div>
+                
+                        <div>
+                            <h3 style="margin-top: 15px;"> <b>₹ 1,20,000</b></h3>
+                        </div>
+                
+                        <div class="row">
+                            <div class="col-sm-3">
+                
+                            </div>
+                            <div class="col-sm-9">
+                
+                            </div>
+                        </div>
+                
+                        <br><br>
+                
+                        <div id="highlights">
+                            <strong class="col-xs-3"
+                                style="color: gray;font-weight: bold;padding-right: 0;width: auto; margin-right: 15px;">Highlights</strong>
+                            <ul class="col-xs-6">
+                                <li>128GB ROM</li>
+                                <li>6.1 inch Super Retina XDR Display</li>
+                                <li>48MP + 12MP Dual Rear Camera | 12MP Front Camera</li>
+                                <li>li-ion Battery</li>
+                                <li>A16 Bionic Chip with 64-bit Architecture, Neural Engine, Embedded M12 Motion Co-processor</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <br><br>
+                
+                    <div class="container col-xs-12" style="margin-top:50px;">
+                        <div class="panel panel-default">
+                            <div class="panel-body">
+                                <div class="col-sm-12">
+                                    <h3>PRODUCT DESCRIPTION</h3>
+                                    <p>Meet the iPhone 16 - the latest in Apple's smartphone innovation. Featuring a sleek design with a
+                                        large 15.49 cm (6.1) Super Retina XDR display and advanced camera capabilities, this smartphone
+                                        is engineered to deliver an exceptional user experience. It also supports wireless charging and
+                                        is designed with cutting-edge technology to ensure top performance.</p>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="panel-body">
+                                <div class="col-sm-12">
+                                    <div class="col-sm-8">
+                                        <h3>15.49 cm Super Retina XDR Screen</h3>
+                                        <p>Experience stunning visuals with the iPhone 16’s Super Retina XDR screen, providing an
+                                            immersive and high-resolution display for all your multimedia needs.</p>
+                                    </div>
+                
+                                    <div class="col-sm-4">
+                                        <img src="/img3.png" class="img-responsive" alt="iPhone 16 Screen">
+                                    </div>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="panel-body">
+                                <div class="col-sm-12">
+                                    <div class="col-sm-4">
+                                        <img src="/img2.png" class="img-responsive" alt="iPhone 16 Camera">
+                                    </div>
+                
+                                    <div class="col-sm-8">
+                                        <h3>Advanced Camera System</h3>
+                                        <p>The iPhone 16 features a revolutionary camera system with enhanced image stabilization and
+                                            low-light performance for capturing stunning photos and videos.</p>
+                                    </div>
+                                </div>
+                            </div>
+                
+                            <div class="panel-footer">
+                                <h4><a href="" style="text-decoration:none;">View all features</a></h4>
+                            </div>
+                        </div>
+                
+                        <!-- Specifications -->
+                        <div class="panel panel-default" id="specifications">
+                            <div class="panel-heading" style="background-color:#fff;">
+                                <h3>Specifications</h3>
+                            </div>
+                
+                            <div class="panel-body">
+                                <h4>General</h4>
+                
+                                <table class="table table-default">
+                                    <tbody>
+                                        <tr>
+                                            <td class="col-sm-4">In The Box</td>
+                                            <td class="col-sm-8">
+                                                Handset, EarPods with Lightning Connector, Lightning to 3.5 mm Headphone Jack Adapter,
+                                                Lightning to USB Cable, USB Power Adapter, Documentation
+                                            </td>
+                                        </tr>
+                
+                                        <tr>
+                                            <td class="col-sm-4">Model Number</td>
+                                            <td class="col-sm-8">MQA82HN/A</td>
+                                        </tr>
+                
+                                        <tr>
+                                            <td class="col-sm-4">Model Name</td>
+                                            <td class="col-sm-8">iPhone 16</td>
+                                        </tr>
+                
+                                        <tr>
+                                            <td class="col-sm-4">Color</td>
+                                            <td class="col-sm-8">Silver</td>
+                                        </tr>
+                
+                                        <tr>
+                                            <td class="col-sm-4">Browse Type</td>
+                                            <td class="col-sm-8">Smartphones</td>
+                                        </tr>
+                
+                                    </tbody>
+                                </table>
+                            </div>
+                
+                            <div class="panel-footer">
+                                <h4><a href="">Read More</a></h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+    </section>
+    <div class="kishore">
+
+
+
+
+        <div class="review-container" style="width: 80%; height:auto;padding:0;">
+            <h2 style="margin-left: 10px; margin-bottom: 0;";">Ratings & Reviews</h2>
+            <div class="mani_nil">
+                <div class="overall-rating">
+                    <div class="rating-score">
+                        <span class="rating-value">4.1</span>★
+                    </div>
+                    
+                </div>
+                <div class="rating-breakdown">
+                    <div class="rating-bar">
+                        <span>5★</span>
+                        <div class="bar"><div class="fill" style="width: 75%;"></div></div>
+                        <span>3,29,492</span>
+                    </div>
+                    <div class="rating-bar">
+                        <span>4★</span>
+                        <div class="bar"><div class="fill" style="width: 20%;"></div></div>
+                        <span>1,11,834</span>
+                    </div>
+                    <div class="rating-bar">
+                        <span>3★</span>
+                        <div class="bar"><div class="fill" style="width: 5%;"></div></div>
+                        <span>44,402</span>
+                    </div>
+                    <div class="rating-bar">
+                        <span>2★</span>
+                        <div class="bar"><div class="fill" style="width: 2%;"></div></div>
+                        <span>22,692</span>
+                    </div>
+                    <div class="rating-bar">
+                        <span>1★</span>
+                        <div class="bar"><div class="fill" style="width: 1%;"></div></div>
+                        <span>56,477</span>
+                    </div>
+                </div>
+        
+                <div class="features">
+                    <div class="feature">
+                        <div class="circle" data-percent="3.7">
+                            <span>3.7</span>
+                        </div>
+                        <span>Battery</span>
+                    </div>
+                    <div class="feature">
+                        <div class="circle" data-percent="4.0">
+                            <span>4.0</span>
+                        </div>
+                        <span>Display</span>
+                    </div>
+                    <div class="feature">
+                        <div class="circle" data-percent="4.1">
+                            <span>4.1</span>
+                        </div>
+                        <span>Design</span>
+                    </div>
+                    <div class="feature">
+                        <div class="circle" data-percent="3.8">
+                            <span>3.8</span>
+                        </div>
+                        <span>Activity Tracking</span>
+                    </div>
+                </div>
+            </div>
+            
+    
+            
+    
+            
+        </div>
+
+
+
+        <div id="testimonials" style="width: 80%;height:auto;margin: 0;padding: 0;" class="container mt-5">
+            <h2 class="text-center">What Our Customers Say</h2>
+            <div class="row" style="display: flex;flex-direction: column;">
+                <div class="col-md-4" style="width: auto;align-items: center;justify-content: center;";>
+                    <div class="review-card">
+                        <div class="review-header">
+                            <div>
+                                <h5>John D.</h5>
+                                <p>⭐⭐⭐⭐⭐ <span class="review-date">Reviewed on Aug 20, 2024</span></p>
+                            </div>
+                        </div>
+                        <blockquote>"The iPhone 16 is a game changer! The battery life and camera are exceptional!"</blockquote>
+                    </div>
+                </div>
+                <div class="col-md-4" style="width: auto;align-items: center;justify-content: center;">
+                    <div class="review-card">
+                        <div class="review-header">
+                            <div>
+                                <h5>Sarah K.</h5>
+                                <p>⭐⭐⭐⭐⭐ <span class="review-date">Reviewed on Sep 2, 2024</span></p>
+                            </div>
+                        </div>
+                        <blockquote>"Sleek design and fantastic performance. Definitely worth the upgrade!"</blockquote>
+                    </div>
+                </div>
+                <div class="col-md-4" style="width: auto;align-items: center;justify-content: center;">
+                    <div class="review-card">
+                        <div class="review-header">
+                            <div>
+                                <h5>Alex T.</h5>
+                                <p>⭐⭐⭐⭐⭐ <span class="review-date">Reviewed on Sep 5, 2024</span></p>
+                            </div>
+                        </div>
+                        <blockquote>"Sleek design and fantastic performance. Definitely worth the upgrade!"</blockquote>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    
+    
+    <section id="contact-us" class="container mt-5"></section>
+        <h2 class="text-center">Contact Us</h2>
+        <form id="contact-form" class="mt-4">
+            <div class="mb-3">
+                <label for="name" class="form-label">Name</label>
+                <input type="text" class="form-control" id="name" required>
+            </div>
+            <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" id="email" required>
+            </div>
+            <div class="mb-3">
+                <label for="subject" class="form-label">Subject</label>
+                <input type="text" class="form-control" id="subject" required>
+            </div>
+            <div class="mb-3">
+                <label for="message" class="form-label">Message</label>
+                <textarea class="form-control" id="message" rows="3" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </section>
+
+    <!-- Buy Now Button -->
+    <div class="container text-center mt-5 mb-5">
+        <a href="#" class="btn btn-lg btn-success">Buy Now</a>
+    </div>
+    <br><br>
+
+    <!-- FOOTER -->
+    <footer class="page-footer container-fluid col-sm-12">
+        <hr>
+        <div class="container">
+            <div class="col-sm-4">
+                <h4>Help</h4>
+                <ul class="list-unstyled quick-links">
+                    <li><a href="">Payments</a></li>
+
+                    <li><a href="">Shipping</a></li>
+
+                    <li><a href="">Cancellations & Return</a></li>
+
+                    <li><a href="">FAQ</a></li>
+
+                </ul>
+            </div>
+
+            <div class="col-sm-4">
+                <h4>Lifestyle Store</h4>
+                <ul class="list-unstyled quick-links">
+                    <li><a href="">Contact Us</a></li>
+
+                    <li><a href="">About Us</a></li>
+                    <li><a href="">Careers</a></li>
+                    <li><a href="">Stories</a></li>
+                    <li><a href="">Sell With Us</a></li>
+                </ul>
+            </div>
+
+            <div class="col-sm-4">
+                <h4>MISC</h4>
+                <ul class="list-unstyled quick-links">
+                    <li><a href="">Online Shopping</a></li>
+                    <li><a href="">Gift Card</a></li>
+                    <li><a href=""></a></li>Sitemap
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="container-fluid col-lg-10 col-lg-offset-1">
+            <div class="row">
+                <hr>
+                <div class="col-sm-4">
+                    <span class="glyphicon glyphicon-map-marker"></span>
+                    <h3 class="text-center">&nbsp;TRACK YOUR ORDER</h3>
+                </div>
+
+                <div class="col-sm-4">
+                    <span class="glyphicon glyphicon-refresh"></span>
+                    <h3 class="text-center">&nbsp;&nbsp;FREE & EASY RETURNS</h3>
+
+                </div>
+
+                <div class="col-sm-4">
+                    <span class="glyphicon glyphicon-remove-circle"></span>
+                    <h3 class="text-center">ONLINE CANCELLATIONS</h3>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="container-fluid" style="position:relative;top:6em;margin-bottom:20px;">
+
+            <div class="col-sm-5">
+
+                <h5 style="font-size:0.95em;">Policies: <a href="" style="text-decoration:none;"> Return Policy </a>|<a
+                        href="" style="text-decoration:none;"> Terms of use </a>|<a href=""
+                        style="text-decoration:none;"> Security </a>|<a href="" style="text-decoration:none;"> Privacy
+                    </a>|<a href="" style="text-decoration:none;"> Infringement</a></h5>
+
+            </div>
+
+            <div class="col-sm-3">
+                <h5 style="font-size:0.95em;">&copy; iPHONE Store</h5>
+            </div>
+
+            <div class="col-sm-4 row contact">
+                <h5 class="col-sm-5" style="font-size:0.95em;">Keep in touch</h5>
+                <div class="col-sm-7">
+                    <button class="btn btn-default" style="border-radius:50%;width:40px;height:40px;"><i
+                            class="fa fa-facebook-f"></i></button>
+
+                    <button class="btn btn-default" style="border-radius:50%;width:40px;height:40px;"><i
+                            class="fa fa-twitter"></i></button>
+
+                    <button class="btn btn-default" style="border-radius:50%;width:40px;height:40px;"><i
+                            class="fa fa-google"></i></button>
+
+                    <button class="btn btn-default" style="border-radius:50%;width:40px;height:40px;"><i
+                            class="fa fa-youtube"></i></button>
+                </div>
+            </div>
+
+        </div>
+        <hr>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/script.js"></script>
+</body>
